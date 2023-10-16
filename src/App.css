@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.MuiInputBase-root.MuiOutlinedInput-root {
+  height: 50px !important;
+}
+.demo-app-main button {
+  background-color: rebeccapurple !important ;
+}
