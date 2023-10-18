@@ -20,7 +20,7 @@ function App() {
   const handleDeleteEvent = async (id: string) => {
     try {
       axios
-        .delete(`http://localhost:5000/appointment/${id}`)
+        .delete(`${process.env.REACT_APP_PUBLIC_URL}/appointment/${id}`)
         .then(() => Fetchevents());
     } catch (error) {
       console.error("Failed to delete event", error);
@@ -28,7 +28,7 @@ function App() {
   };
   const Fetchevents = async () => {
     axios
-      .get(`http://localhost:5000/appointment/myappointment`, {
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/appointment/myappointment`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

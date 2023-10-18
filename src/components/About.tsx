@@ -29,7 +29,7 @@ const AboutUsSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const response = await axios.post(
-      "http://localhost:5000o/messages/addmsg",
+      "${process.env.REACT_APP_PUBLIC_URL}o/messages/addmsg",
       formData
     );
     setMsg(response.data.message);

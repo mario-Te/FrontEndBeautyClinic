@@ -184,7 +184,7 @@ const ProfileCard = () => {
     // You can perform additional actions with the review text here
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/reviews/add`, formdata, {
+      .post(`${process.env.REACT_APP_PUBLIC_URL}/reviews/add`, formdata, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -215,7 +215,7 @@ const ProfileCard = () => {
     token: string | undefined
   ) => {
     await axios
-      .get(`http://localhost:5000/auth/${username}`, {
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/auth/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -227,7 +227,7 @@ const ProfileCard = () => {
   };
   const fectchReviews = async (username: string | undefined) => {
     axios
-      .get(`http://localhost:5000/reviews/${username}`, {})
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/reviews/${username}`, {})
       .then((response) => {
         setReviewData(response.data);
       })
@@ -253,8 +253,8 @@ const ProfileCard = () => {
                 <ProfileImage
                   src={
                     data?.Image
-                      ? `/images/users/${data?.Image}`
-                      : `/images/users/default.jpg `
+                      ? `${process.env.PUBLIC_URL}/images/users/${data?.Image}`
+                      : `${process.env.PUBLIC_URL}/images/users/default.jpg `
                   }
                   alt="Profile"
                 />

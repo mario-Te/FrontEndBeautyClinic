@@ -22,7 +22,7 @@ export interface AuthResponse {
 export const authenticate = async (data: AuthPayload) => {
   try {
     const response = await axios.post(
-      `http://localhost:5000/auth/register`,
+      `${process.env.REACT_APP_PUBLIC_URL}/auth/register`,
       data
     );
     return {
@@ -49,7 +49,10 @@ export const isAuthenticated = (): boolean => {
 };
 export const login = async (data: AuthPayload) => {
   try {
-    const response = await axios.post(`http://localhost:5000/auth/login`, data);
+    const response = await axios.post(
+      `${process.env.REACT_APP_PUBLIC_URL}/auth/login`,
+      data
+    );
     return {
       status: true,
       data: {
@@ -71,7 +74,7 @@ export const login = async (data: AuthPayload) => {
 export const CheckAdmin = async (formData: AdminPayload) => {
   try {
     const response = await axios.post(
-      `http://localhost:5000/auth/checkAdmin`,
+      `${process.env.REACT_APP_PUBLIC_URL}/auth/checkAdmin`,
       formData
     ); //
     return {
@@ -93,7 +96,9 @@ export const FetchUser = async (user: string) => {
 
 export const fetchUsers = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/users/all`); // Replace with your API endpoint
+    const response = await axios.get(
+      `${process.env.REACT_APP_PUBLIC_URL}/users/all`
+    ); // Replace with your API endpoint
     return response.data;
   } catch (error) {
     throw new Error("Failed to fetch services");

@@ -47,7 +47,7 @@ const DataTable: React.FC = () => {
   useEffect(() => {
     // Fetch the data from the server-side API
     axios
-      .get(`http://localhost:5000/reviews/all`)
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/reviews/all`)
       .then((response) => {
         setData(response.data);
       })
@@ -64,7 +64,7 @@ const DataTable: React.FC = () => {
         const selectedIds = selectedRows.slice(); // Create a copy of selected rows
         Promise.all(
           selectedIds.map((id) =>
-            axios.delete(`http://localhost:5000/reviews/${id}`)
+            axios.delete(`${process.env.REACT_APP_PUBLIC_URL}/reviews/${id}`)
           )
         )
           .then(() => {

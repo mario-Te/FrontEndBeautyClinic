@@ -76,11 +76,15 @@ const UpdateProfile: React.FC = () => {
         formData.confirmedpassword === formData.newpassword
       ) {
         await axios
-          .put(`http://localhost:5000/auth/updatepassword`, formData, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
+          .put(
+            `${process.env.REACT_APP_PUBLIC_URL}/auth/updatepassword`,
+            formData,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          )
           .then((response) => {
             if (response.data.message === "Document updated successfully")
               setSubmissionStatus(true);

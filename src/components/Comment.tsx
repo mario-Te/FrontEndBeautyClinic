@@ -38,7 +38,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
     );
     if (confirmed) {
       axios
-        .delete(`http://localhost:5000/reviews/${id}`)
+        .delete(`${process.env.REACT_APP_PUBLIC_URL}/reviews/${id}`)
         .then(() => {
           // Remove the deleted User from the data array
           const updatedComments = commentList.filter((item) => item._id !== id);
@@ -78,7 +78,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
                 onClick={() => navigate(`/${comment.user}`)}
                 avatar={
                   <Avatar
-                    src={`/images/users/${comment.avatar}`}
+                    src={`${process.env.PUBLIC_URL}/images/users/${comment.avatar}`}
                     alt={comment.user}
                   />
                 }

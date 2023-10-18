@@ -79,11 +79,15 @@ const App: React.FC = () => {
     try {
       e.preventDefault();
       await axios
-        .post(`http://localhost:5000/appointment/add4`, formData, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        .post(
+          `${process.env.REACT_APP_PUBLIC_URL}/appointment/add4`,
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .then((response) => {
           if (response.data.message == "Appointment added successfully")
             setSubmissionStatus(true);
@@ -120,9 +124,11 @@ const App: React.FC = () => {
       dispatch(fetchServices());
     }
     if (firstRender) {
-      axios.get(`http://localhost:5000/auth/allUserNames`).then((response) => {
-        setUsers(response.data);
-      });
+      axios
+        .get(`${process.env.REACT_APP_PUBLIC_URL}/auth/allUserNames`)
+        .then((response) => {
+          setUsers(response.data);
+        });
       setFirstRender(false);
     }
   }, []);

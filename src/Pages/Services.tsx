@@ -112,14 +112,14 @@ const ServicePge = () => {
       dispatch(fetchServices());
     }
     axios
-      .get(`http://localhost:5000/auth/services/${title}`)
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/auth/services/${title}`)
       .then((res) => setEmps(res.data));
   }, []);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/appointment/add`, FormData, {
+      .post(`${process.env.REACT_APP_PUBLIC_URL}/appointment/add`, FormData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -150,7 +150,7 @@ const ServicePge = () => {
           </Typography>
 
           <CardImage
-            src={`/images/services/${service?.image}`}
+            src={`${process.env.PUBLIC_URL}/images/services/${service?.image}`}
             alt={service?.title}
           />
         </Grid>

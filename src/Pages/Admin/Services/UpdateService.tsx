@@ -82,12 +82,16 @@ const App: React.FC = () => {
     try {
       e.preventDefault();
       await axios
-        .put(`http://localhost:5000/services/${formData.title}`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        .put(
+          `${process.env.REACT_APP_PUBLIC_URL}/services/${formData.title}`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .then((response) => {
           if (response.data.message === "Document updated successfully") {
             {
@@ -104,7 +108,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // Fetch the data from the server-side API
     axios
-      .get(`http://localhost:5000/services/${title}`)
+      .get(`${process.env.REACT_APP_PUBLIC_URL}/services/${title}`)
       .then((response) => {
         setFormData({ ...response.data, file: response.data.image });
         setLoading(false);

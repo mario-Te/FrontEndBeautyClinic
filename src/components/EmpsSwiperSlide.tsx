@@ -73,7 +73,10 @@ const EmpsSwiperSlideComponent: React.FC<SwiperSlideProps> = ({ users }) => {
         <SwiperSlide key={index}>
           <StyledLink to={`/${user.name}`}>
             <ServiceCard>
-              <CardImage src={`/images/users/${user.img}`} alt={user.name} />
+              <CardImage
+                src={`${process.env.PUBLIC_URL}/images/users/${user.img}`}
+                alt={user.name}
+              />
               <CardContent>
                 <CardTitle variant="h5">{user.name}</CardTitle>
                 <CardDescription variant="body1">{user.bio}</CardDescription>

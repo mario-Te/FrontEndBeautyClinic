@@ -72,12 +72,16 @@ const UpdateProfile: React.FC = () => {
       e.preventDefault();
       if (checkLength(formData.password)) {
         await axios
-          .post(`http://localhost:5000/auth/updateProfile`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              Authorization: `Bearer ${token}`,
-            },
-          })
+          .post(
+            `${process.env.REACT_APP_PUBLIC_URL}/auth/updateProfile`,
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          )
           .then((response) => {
             if (response.data.message === "Document updated successfully")
               setSubmissionStatus(true);
