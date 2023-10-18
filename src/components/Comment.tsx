@@ -78,7 +78,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
                 onClick={() => navigate(`/${comment.user}`)}
                 avatar={
                   <Avatar
-                    src={`${process.env.PUBLIC_URL}/images/users/${comment.avatar}`}
+                    src={`/images/users/${comment.avatar}`}
                     alt={comment.user}
                   />
                 }

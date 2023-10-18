@@ -36,7 +36,7 @@ const ImageContainer = styled(Box)(() => ({
   justifyContent: "center",
   alignItems: "center",
   minHeight: "482px",
-  backgroundImage: `url('./images/loginBackgroud.jpg')`,
+  backgroundImage: `url(${process.env.PUBLIC_URL}/images/loginBackgroud.jpg)`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));

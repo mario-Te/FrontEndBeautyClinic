@@ -150,7 +150,7 @@ const ServicePge = () => {
           </Typography>
 
           <CardImage
-            src={`${process.env.PUBLIC_URL}/images/services/${service?.image}`}
+            src={`${process.env.REACT_APP_PUBLIC_URL}/uploads/${service?.image}`}
             alt={service?.title}
           />
         </Grid>

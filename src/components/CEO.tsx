@@ -14,7 +14,7 @@ const SectionContainer = styled("section")({
 const ImageContainer = styled(Grid)({
   height: "400px",
   justifyContent: "center",
-  backgroundImage: 'url("/images/users/file-1696753414264.jpg")',
+  backgroundImage: `url(${process.env.PUBLIC_URL}/images/file-1696753414264.jpg)`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 });

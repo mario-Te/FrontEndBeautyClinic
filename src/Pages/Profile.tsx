@@ -253,10 +253,9 @@ const ProfileCard = () => {
                 <ProfileImage
                   src={
                     data?.Image
-                      ? `${process.env.PUBLIC_URL}/images/users/${data?.Image}`
-                      : `${process.env.PUBLIC_URL}/images/users/default.jpg `
+                      ? `${process.env.REACT_APP_PUBLIC_URL}/uploads/${data?.Image}`
+                      : `${process.env.PUBLIC_URL}/images/default.jpg `
                   }
-                  alt="Profile"
                 />
               </Box>
               <Box style={{ textAlign: "center", marginTop: "3rem" }}>
@@ -294,57 +293,62 @@ const ProfileCard = () => {
                     </Button>
                   </ButtonGroup>
                 )}
-                {isLoggedIn && !data?.isSame && data?.Role == "Employee" && (
-                  <>
-                    <Button
-                      variant="contained"
-                      sx={{ backgroundColor: "rebeccapurple" }}
-                      onClick={handleOpen}
-                    >
-                      <StarIcon />
-                      Review
-                    </Button>
-                    <Dialog
-                      open={open}
-                      onClose={handleClose}
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <DialogTitle>Thanks for sharing your review</DialogTitle>
-                      <DialogContent>
-                        <Rating
-                          name="rating"
-                          value={formdata.rating}
-                          onChange={handleRatingChange}
-                          sx={{ my: 2 }}
-                          aria-label="Review"
-                        />
-                        <TextField
-                          label="Your Review"
-                          rows={4}
-                          value={formdata.reviewText}
-                          onChange={(e) =>
-                            setformdata({
-                              ...formdata,
-                              reviewText: e.target.value,
-                            })
-                          }
-                          fullWidth
-                        />
-                      </DialogContent>
-                      <DialogActions>
-                        <Button
-                          onClick={handleSubmit}
-                          sx={{
-                            backgroundColor: "rebeccapurple",
-                            color: "white",
-                          }}
-                        >
-                          Submit
-                        </Button>
-                      </DialogActions>
-                    </Dialog>
-                  </>
-                )}
+                {isLoggedIn &&
+                  !data?.isSame &&
+                  data?.Role == "Employee" &&
+                  authentication.Role == "User" && (
+                    <>
+                      <Button
+                        variant="contained"
+                        sx={{ backgroundColor: "rebeccapurple" }}
+                        onClick={handleOpen}
+                      >
+                        <StarIcon />
+                        Review
+                      </Button>
+                      <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        sx={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <DialogTitle>
+                          Thanks for sharing your review
+                        </DialogTitle>
+                        <DialogContent>
+                          <Rating
+                            name="rating"
+                            value={formdata.rating}
+                            onChange={handleRatingChange}
+                            sx={{ my: 2 }}
+                            aria-label="Review"
+                          />
+                          <TextField
+                            label="Your Review"
+                            rows={4}
+                            value={formdata.reviewText}
+                            onChange={(e) =>
+                              setformdata({
+                                ...formdata,
+                                reviewText: e.target.value,
+                              })
+                            }
+                            fullWidth
+                          />
+                        </DialogContent>
+                        <DialogActions>
+                          <Button
+                            onClick={handleSubmit}
+                            sx={{
+                              backgroundColor: "rebeccapurple",
+                              color: "white",
+                            }}
+                          >
+                            Submit
+                          </Button>
+                        </DialogActions>
+                      </Dialog>
+                    </>
+                  )}
               </Box>
             </CardContent>
           </StyledCard>

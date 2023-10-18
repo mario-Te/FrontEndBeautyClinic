@@ -60,10 +60,6 @@ const DataTable: React.FC = () => {
       });
   }, []);
 
-  const handleUpdate = (id: string) => {
-    // Implement the logic to update the appointment with the given id
-    // Navigate to the update page or display a modal for editing the appointment data
-  };
   const handleRowSelect = (rowId: string) => {
     if (selectedRows.includes(rowId)) {
       setSelectedRows(selectedRows.filter((id) => id !== rowId));
@@ -178,12 +174,6 @@ const DataTable: React.FC = () => {
                     checked={selectedRows.includes(item._id)}
                     onChange={() => handleRowSelect(item._id)}
                   />
-                  <IconButton
-                    aria-label="edit"
-                    onClick={() => handleUpdate(item._id)}
-                  >
-                    <EditIcon />
-                  </IconButton>
                 </TableCell>
               </TableRow>
             ))}

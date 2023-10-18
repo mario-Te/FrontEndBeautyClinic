@@ -55,7 +55,7 @@ const SwiperSlideComponent: React.FC<SwiperSlideProps> = ({ services }) => {
           <StyledLink to={`/services/${service.title}`}>
             <ServiceCard>
               <CardImage
-                src={`/images/services/${service.image}`}
+                src={`${process.env.REACT_APP_PUBLIC_URL}/uploads/${service.image}`}
                 alt={service.title}
               />
               <CardContent>

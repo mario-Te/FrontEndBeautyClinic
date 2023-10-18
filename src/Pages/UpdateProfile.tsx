@@ -45,7 +45,6 @@ interface UserFormData {
   password: string;
   file: File | null;
   bio: string;
-  speclization: string;
 }
 const UpdateProfile: React.FC = () => {
   const authentication = useSelector(selectAuthentication);
@@ -53,7 +52,6 @@ const UpdateProfile: React.FC = () => {
   const [formData, setFormData] = React.useState<UserFormData>({
     password: "",
     bio: "",
-    speclization: "",
     file: null,
   });
 
@@ -121,17 +119,7 @@ const UpdateProfile: React.FC = () => {
             onChange={handleFormUpdate}
           />
         </FormControl>
-        <FormControl fullWidth margin="normal">
-          <InputLabel htmlFor="speclization-field">Specialization</InputLabel>
-          <Input
-            id="speclization-field"
-            type="text"
-            name="speclization"
-            value={formData.speclization}
-            onChange={handleFormUpdate}
-            required
-          />
-        </FormControl>
+
         <FormControl fullWidth margin="normal">
           <InputLabel htmlFor="password-field"> Old Password</InputLabel>
           <Input
