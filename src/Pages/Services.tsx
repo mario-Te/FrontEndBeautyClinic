@@ -112,14 +112,14 @@ const ServicePge = () => {
       dispatch(fetchServices());
     }
     axios
-      .get(`${process.env.PUBLIC_URL}/auth/services/${title}`)
+      .get(`http://localhost:5000/auth/services/${title}`)
       .then((res) => setEmps(res.data));
   }, []);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     await axios
-      .post(`${process.env.PUBLIC_URL}/appointment/add`, FormData, {
+      .post(`http://localhost:5000/appointment/add`, FormData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

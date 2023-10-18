@@ -38,7 +38,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
     );
     if (confirmed) {
       axios
-        .delete(`${process.env.PUBLIC_URL}/reviews/${id}`)
+        .delete(`http://localhost:5000/reviews/${id}`)
         .then(() => {
           // Remove the deleted User from the data array
           const updatedComments = commentList.filter((item) => item._id !== id);

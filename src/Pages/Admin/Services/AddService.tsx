@@ -78,7 +78,7 @@ const App: React.FC = () => {
       e.preventDefault();
       if (formData.file)
         await axios
-          .post(`${process.env.PUBLIC_URL}/services/add`, formData, {
+          .post(`http://localhost:5000/services/add`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
               Authorization: `Bearer ${token}`,

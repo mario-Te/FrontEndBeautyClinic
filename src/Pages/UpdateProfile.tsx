@@ -72,7 +72,7 @@ const UpdateProfile: React.FC = () => {
       e.preventDefault();
       if (checkLength(formData.password)) {
         await axios
-          .post(`${process.env.PUBLIC_URL}/auth/updateProfile`, formData, {
+          .post(`http://localhost:5000/auth/updateProfile`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
               Authorization: `Bearer ${token}`,

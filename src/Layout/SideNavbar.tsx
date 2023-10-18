@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
 }));
-const drawerWidth = 240;
+const drawerWidth = 10;
 
 const Root = styled("div")(({ theme }) => ({
   display: "flex",
@@ -27,7 +27,7 @@ const Root = styled("div")(({ theme }) => ({
 
 const DrawerContainer = styled("div")(({ theme }) => ({
   width: drawerWidth,
-  position: "static",
+  position: "relative",
   flexShrink: 0,
 }));
 
@@ -41,8 +41,9 @@ const MainContent = styled("div")({
 });
 
 const VerticalAppBar: React.FC = () => {
+  const [visible, setVisible] = React.useState(false);
   return (
-    <Root>
+    <Root onMouseLeave={() => setVisible(false)}>
       <DrawerContainer>
         <Drawer variant="permanent" anchor="left">
           <DrawerContent>

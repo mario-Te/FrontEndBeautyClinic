@@ -3,6 +3,6 @@ declare namespace NodeJS {
   interface ProcessEnv {
     //types of envs
     NODE_ENV: "development" | "production" | "test";
-    PUBLIC_URL: string = "http://localhost:5000";
+    RREACT_APP_PUBLIC_URL: string;
   }
 }

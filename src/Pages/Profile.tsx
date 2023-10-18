@@ -184,7 +184,7 @@ const ProfileCard = () => {
     // You can perform additional actions with the review text here
     e.preventDefault();
     axios
-      .post(`${process.env.PUBLIC_URL}/reviews/add`, formdata, {
+      .post(`http://localhost:5000/reviews/add`, formdata, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -215,7 +215,7 @@ const ProfileCard = () => {
     token: string | undefined
   ) => {
     await axios
-      .get(`${process.env.PUBLIC_URL}/auth/${username}`, {
+      .get(`http://localhost:5000/auth/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -227,7 +227,7 @@ const ProfileCard = () => {
   };
   const fectchReviews = async (username: string | undefined) => {
     axios
-      .get(`${process.env.PUBLIC_URL}/reviews/${username}`, {})
+      .get(`http://localhost:5000/reviews/${username}`, {})
       .then((response) => {
         setReviewData(response.data);
       })

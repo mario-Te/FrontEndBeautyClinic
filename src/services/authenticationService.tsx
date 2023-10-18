@@ -22,7 +22,7 @@ export interface AuthResponse {
 export const authenticate = async (data: AuthPayload) => {
   try {
     const response = await axios.post(
-      `${process.env.PUBLIC_URL}/auth/register`,
+      `http://localhost:5000/auth/register`,
       data
     );
     return {
@@ -49,10 +49,7 @@ export const isAuthenticated = (): boolean => {
 };
 export const login = async (data: AuthPayload) => {
   try {
-    const response = await axios.post(
-      `${process.env.PUBLIC_URL}/auth/login`,
-      data
-    );
+    const response = await axios.post(`http://localhost:5000/auth/login`, data);
     return {
       status: true,
       data: {
@@ -74,7 +71,7 @@ export const login = async (data: AuthPayload) => {
 export const CheckAdmin = async (formData: AdminPayload) => {
   try {
     const response = await axios.post(
-      `${process.env.PUBLIC_URL}/auth/checkAdmin`,
+      `http://localhost:5000/auth/checkAdmin`,
       formData
     ); //
     return {
@@ -87,7 +84,7 @@ export const CheckAdmin = async (formData: AdminPayload) => {
 
 export const FetchUser = async (user: string) => {
   try {
-    const response = await axios.get(`${process.env.PUBLIC_URL}/auth/${user}`); // Replace with your API endpoint
+    const response = await axios.get(`${process.env.Requset_URL}/auth/${user}`); // Replace with your API endpoint
     return response.data;
   } catch (error) {
     throw new Error("Failed to fetch services");
@@ -96,7 +93,7 @@ export const FetchUser = async (user: string) => {
 
 export const fetchUsers = async () => {
   try {
-    const response = await axios.get(`${process.env.PUBLIC_URL}/users/all`); // Replace with your API endpoint
+    const response = await axios.get(`http://localhost:5000/users/all`); // Replace with your API endpoint
     return response.data;
   } catch (error) {
     throw new Error("Failed to fetch services");

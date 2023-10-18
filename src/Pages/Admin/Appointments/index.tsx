@@ -83,7 +83,7 @@ const DataTable: React.FC = () => {
 
     try {
       axios
-        .get(`${process.env.PUBLIC_URL}/auth/emps/${ServiceName}`)
+        .get(`http://localhost:5000/auth/emps/${ServiceName}`)
         .then((response) => {
           setempsData(response.data);
         })
@@ -105,7 +105,7 @@ const DataTable: React.FC = () => {
     // Fetch the data from the server-side API
 
     axios
-      .get(`${process.env.PUBLIC_URL}/appointment/all`)
+      .get(`http://localhost:5000/appointment/all`)
       .then((response) => {
         setData(response.data);
       })
@@ -139,7 +139,7 @@ const DataTable: React.FC = () => {
         const selectedIds = selectedRows.slice(); // Create a copy of selected rows
         Promise.all(
           selectedIds.map((id) =>
-            axios.delete(`${process.env.PUBLIC_URL}/appointment/${id}`)
+            axios.delete(`http://localhost:5000/appointment/${id}`)
           )
         )
           .then(() => {
@@ -165,7 +165,7 @@ const DataTable: React.FC = () => {
   const handleConfirm_Reject = async (isconfirmed: boolean) => {
     try {
       await axios.put(
-        `${process.env.PUBLIC_URL}/appointment/updatestatus`,
+        `http://localhost:5000/appointment/updatestatus`,
         {
           id: Id,
           isconfirmed: isconfirmed,

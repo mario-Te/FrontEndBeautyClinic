@@ -76,7 +76,7 @@ const UpdateProfile: React.FC = () => {
         formData.confirmedpassword === formData.newpassword
       ) {
         await axios
-          .put(`${process.env.PUBLIC_URL}/auth/updatepassword`, formData, {
+          .put(`http://localhost:5000/auth/updatepassword`, formData, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

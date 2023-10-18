@@ -93,7 +93,7 @@ const App: React.FC = () => {
       e.preventDefault();
       if (validateEmail(formData.email) && checkLength(formData.password)) {
         await axios
-          .post(`${process.env.PUBLIC_URL}/auth/addUser`, formData, {
+          .post(`http://localhost:5000/auth/addUser`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
               Authorization: `Bearer ${token}`,

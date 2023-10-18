@@ -82,7 +82,7 @@ const App: React.FC = () => {
     try {
       e.preventDefault();
       await axios
-        .put(`${process.env.PUBLIC_URL}/services/${formData.title}`, formData, {
+        .put(`http://localhost:5000/services/${formData.title}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -104,7 +104,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // Fetch the data from the server-side API
     axios
-      .get(`${process.env.PUBLIC_URL}/services/${title}`)
+      .get(`http://localhost:5000/services/${title}`)
       .then((response) => {
         setFormData({ ...response.data, file: response.data.image });
         setLoading(false);

@@ -79,7 +79,7 @@ const App: React.FC = () => {
     try {
       e.preventDefault();
       await axios
-        .post(`${process.env.PUBLIC_URL}/appointment/add4`, formData, {
+        .post(`http://localhost:5000/appointment/add4`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -120,11 +120,9 @@ const App: React.FC = () => {
       dispatch(fetchServices());
     }
     if (firstRender) {
-      axios
-        .get(`${process.env.PUBLIC_URL}/auth/allUserNames`)
-        .then((response) => {
-          setUsers(response.data);
-        });
+      axios.get(`http://localhost:5000/auth/allUserNames`).then((response) => {
+        setUsers(response.data);
+      });
       setFirstRender(false);
     }
   }, []);
