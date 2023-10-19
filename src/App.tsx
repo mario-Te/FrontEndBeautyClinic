@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Homepage";
 import Navbar from "./Layout/Navbar";
 import Profile from "./Pages/Profile";
@@ -27,7 +27,7 @@ function App() {
   const authentication = useSelector(selectAuthentication);
   const isAdmin: boolean = authentication.Role === "Admin";
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <Routes>
         <Route path="/FrontEndBeautyClinic" element={<HomePage />} />
@@ -125,7 +125,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

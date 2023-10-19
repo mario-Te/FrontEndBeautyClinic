@@ -66,7 +66,7 @@ const DataTable: React.FC = () => {
           )
         )
           .then(() => {
-            console.log("Delete selected Services");
+            console.log("Delete selected Message");
             // Remove the deleted appointments from the data array
             const updatedData = data?.filter(
               (item) => !selectedIds.includes(item._id)
