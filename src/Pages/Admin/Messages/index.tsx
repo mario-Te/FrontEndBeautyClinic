@@ -56,15 +56,13 @@ const DataTable: React.FC = () => {
   const handleDropSelected = () => {
     if (selectedRows.length > 0) {
       const confirmed = window.confirm(
-        "Are you sure you want to delete the selected Services?"
+        "Are you sure you want to delete the selected Message?"
       );
       if (confirmed) {
         const selectedIds = selectedRows.slice(); // Create a copy of selected rows
         Promise.all(
           selectedIds.map((id) =>
-            axios.delete(
-              `${process.env.REACT_APP_PUBLIC_URL}//o/Messages/${id}`
-            )
+            axios.delete(`${process.env.REACT_APP_PUBLIC_URL}/o/Messages/${id}`)
           )
         )
           .then(() => {
