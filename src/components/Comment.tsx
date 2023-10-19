@@ -75,10 +75,10 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
           {commentList.map((comment, index) => (
             <Card key={index} sx={{ mb: 2 }}>
               <CardHeader
-                onClick={() => navigate(`/users/${comment.user}`)}
+                onClick={() => navigate(`/${comment.user}`)}
                 avatar={
                   <Avatar
-                    src={`/images/users/${comment.avatar}`}
+                    src={`${process.env.PUBLIC_URL}/uploads/${comment.avatar}`}
                     alt={comment.user}
                   />
                 }

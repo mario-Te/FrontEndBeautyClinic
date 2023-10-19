@@ -71,7 +71,7 @@ const EmpsSwiperSlideComponent: React.FC<SwiperSlideProps> = ({ users }) => {
     >
       {users.map((user, index) => (
         <SwiperSlide key={index}>
-          <StyledLink to={`/users/${user.name}`}>
+          <StyledLink to={`/${user.name}`}>
             <ServiceCard>
               <CardImage
                 src={`${process.env.REACT_APP_PUBLIC_URL}/uploads/${user.img}`}

@@ -132,7 +132,7 @@ export default function SearchAppBar() {
             }}
           >
             <List>
-              <ListItem button component={StyledLink} to="/home">
+              <ListItem button component={StyledLink} to="/">
                 <ListItemText primary="Home" />
               </ListItem>
               {isAdmin && (
@@ -148,11 +148,7 @@ export default function SearchAppBar() {
                   <ListItemText primary="Register" />
                 </ListItem>
               ) : (
-                <ListItem
-                  button
-                  component={StyledLink}
-                  to={`/users/${Username}`}
-                >
+                <ListItem button component={StyledLink} to={`/${Username}`}>
                   <ListItemText primary="Profile" />
                 </ListItem>
               )}
@@ -180,7 +176,7 @@ export default function SearchAppBar() {
             }}
           >
             <StyledTypograph variant="h6" noWrap>
-              <StyledLink to="/home">Home</StyledLink>
+              <StyledLink to="/">Home</StyledLink>
             </StyledTypograph>
             {isAdmin && (
               <StyledTypograph variant="h6" noWrap>
@@ -194,7 +190,7 @@ export default function SearchAppBar() {
               {!isLoggedIn ? (
                 <StyledLink to="/register">Register</StyledLink>
               ) : (
-                <StyledLink to={`/users/${Username}`}>{Username}</StyledLink>
+                <StyledLink to={`/${Username}`}>{Username}</StyledLink>
               )}
             </StyledTypograph>
           </Box>
