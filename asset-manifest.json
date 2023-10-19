@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FrontEndBeautyClinic/static/css/main.a3593800.css",
-    "main.js": "/FrontEndBeautyClinic/static/js/main.ba99c36b.js",
+    "main.js": "/FrontEndBeautyClinic/static/js/main.cc4cd6e8.js",
     "static/js/787.28cb0dcd.chunk.js": "/FrontEndBeautyClinic/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/FrontEndBeautyClinic/index.html",
     "main.a3593800.css.map": "/FrontEndBeautyClinic/static/css/main.a3593800.css.map",
-    "main.ba99c36b.js.map": "/FrontEndBeautyClinic/static/js/main.ba99c36b.js.map",
+    "main.cc4cd6e8.js.map": "/FrontEndBeautyClinic/static/js/main.cc4cd6e8.js.map",
     "787.28cb0dcd.chunk.js.map": "/FrontEndBeautyClinic/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3593800.css",
-    "static/js/main.ba99c36b.js"
+    "static/js/main.cc4cd6e8.js"
   ]
 }
