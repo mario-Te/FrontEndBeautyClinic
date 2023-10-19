@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.a3593800.css",
-    "main.js": "/static/js/main.e9b87eff.js",
-    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/index.html",
-    "main.a3593800.css.map": "/static/css/main.a3593800.css.map",
-    "main.e9b87eff.js.map": "/static/js/main.e9b87eff.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/FrontEndBeautyClinic/static/css/main.a3593800.css",
+    "main.js": "/FrontEndBeautyClinic/static/js/main.77a0fdcd.js",
+    "static/js/787.28cb0dcd.chunk.js": "/FrontEndBeautyClinic/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/FrontEndBeautyClinic/index.html",
+    "main.a3593800.css.map": "/FrontEndBeautyClinic/static/css/main.a3593800.css.map",
+    "main.77a0fdcd.js.map": "/FrontEndBeautyClinic/static/js/main.77a0fdcd.js.map",
+    "787.28cb0dcd.chunk.js.map": "/FrontEndBeautyClinic/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3593800.css",
-    "static/js/main.e9b87eff.js"
+    "static/js/main.77a0fdcd.js"
   ]
 }
