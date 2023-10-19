@@ -80,7 +80,7 @@ const LoginPage: React.FC = () => {
         dispatch(authenticateUser(formData))
           .then((response) => {
             console.log(response);
-            if (response.status) navigate("/");
+            if (response.status) navigate("/home");
             else if (response.error == "Error: User already exists")
               setFormErr({ ...FormErr, TakenUser: false });
             else if (response.error == "Error: Email already exists")

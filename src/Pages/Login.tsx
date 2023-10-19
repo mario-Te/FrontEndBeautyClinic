@@ -65,7 +65,7 @@ const LoginPage: React.FC = () => {
     dispatch(LoginUser(formData))
       .then((response) => {
         console.log(response);
-        if (response.status) navigate("/");
+        if (response.status) navigate("/home");
         else if (response.error == "Error: User doesn't exist")
           setFormErr({ ...FormErr, WrongUser: false });
         else if (response.error == "Error: Wrong Credntial")
