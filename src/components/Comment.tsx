@@ -45,7 +45,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
           setCommentList(updatedComments);
         })
         .catch((error) => {
-          console.error("Failed to delete User", error);
+          console.error("Failed to delete Review", error);
           // Handle the error accordingly
         });
     }
@@ -78,7 +78,7 @@ const CommentSection: React.FC<AppProps> = ({ comments }) => {
                 onClick={() => navigate(`/${comment.user}`)}
                 avatar={
                   <Avatar
-                    src={`${process.env.PUBLIC_URL}/uploads/${comment.avatar}`}
+                    src={`${process.env.REACT_APP_PUBLIC_URL}/uploads/${comment.avatar}`}
                     alt={comment.user}
                   />
                 }

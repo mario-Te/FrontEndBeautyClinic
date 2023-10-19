@@ -208,7 +208,7 @@ const ProfileCard = () => {
   let navigate = useNavigate();
   const handleLogout = () => {
     // Perform logout logic here
-    dispatch(Logout()).then(() => navigate("/"));
+    dispatch(Logout()).then(() => navigate("/home"));
   };
   const fetchUserData = async (
     username: string | undefined,
