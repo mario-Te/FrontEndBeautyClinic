@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://mario-Te.github.io/",
+  "homepage": "https://mario-Te.github.io/FrontEndBeautyClinic",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
