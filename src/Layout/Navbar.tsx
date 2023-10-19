@@ -132,7 +132,7 @@ export default function SearchAppBar() {
             }}
           >
             <List>
-              <ListItem button component={StyledLink} to="/">
+              <ListItem button component={StyledLink} to="/home">
                 <ListItemText primary="Home" />
               </ListItem>
               {isAdmin && (
@@ -176,7 +176,7 @@ export default function SearchAppBar() {
             }}
           >
             <StyledTypograph variant="h6" noWrap>
-              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/home">Home</StyledLink>
             </StyledTypograph>
             {isAdmin && (
               <StyledTypograph variant="h6" noWrap>
